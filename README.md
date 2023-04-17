@@ -8,6 +8,7 @@ this is an exercise of a full stack Login Page
 - My SQL 8.0 https://dev.mysql.com/downloads/mysql/
 - Node 16.13.2 https://nodejs.org/en/blog/release/v16.13.2
 - npm 8.1.2 https://www.npmjs.com/package/npm/v/8.1.2
+- Angular/cli 15.2.4 https://www.npmjs.com/package/@angular/cli/v/15.2.4
 
 ### Backend
 
@@ -23,6 +24,21 @@ npm install
 4. start the BE server
 ```
 npm start
+```
+
+### Frontend
+
+1. go to frontend folder
+```
+cd ./frontend
+```
+2. run the npm install command
+```
+npm install
+```
+4. start the FE client
+```
+ng s
 ```
 
 
