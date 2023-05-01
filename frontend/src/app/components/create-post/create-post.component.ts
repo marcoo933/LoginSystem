@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Post } from 'src/app/models/Post';
 import { AuthService } from 'src/app/services/auth.service';
@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class CreatePostComponent {
   @ViewChild("formDirective") formDirective: NgForm;
+  @Output() create: EventEmitter<any> = new EventEmitter();
   form: FormGroup;
 
   constructor(private authService: AuthService) {
@@ -29,6 +30,7 @@ export class CreatePostComponent {
 
   onSubmit(formData: Pick<Post, "title" | "body">): void {
     console.log(formData);
+    this.create.emit(null);
     this.form.reset();
     this.formDirective.resetForm();
   }
