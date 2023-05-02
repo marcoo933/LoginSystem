@@ -17,7 +17,7 @@ import { User } from 'src/app/models/User';
 })
 export class PostsComponent {
   posts$: Observable<Post[]>;
-  userId: Pick<User, "id">;
+  userId: any;
 
   constructor(private postService: PostService,
               private authService: AuthService) {
@@ -37,7 +37,7 @@ export class PostsComponent {
     this.posts$ = this.fetchAll();
   }
 
-  delete(postId: Pick<Post, "id">): void {
+  delete(postId: any): void {
     this.postService.deletePost(postId).subscribe(() => (this.posts$ = this.fetchAll()))
   }
 
